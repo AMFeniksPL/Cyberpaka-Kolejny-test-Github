@@ -1,4 +1,12 @@
 from tkinter import *
+from tkinter import filedialog as fd
+
+def add_image():
+    filetypes = (
+        ('text files', '*.png'),
+        ('All files', '*.*')
+    )
+    fd.askopenfilename(filetypes=filetypes)
 
 window = Tk()
 window.minsize(640, 480)
@@ -7,7 +15,13 @@ window.geometry("640x480")
 
 photo = PhotoImage(file="Zrzut ekranu 2022-12-11 193101.png")
 
-mainFrame = Label(window,
+frame1 = Frame(window, bg="black", height= 50)
+frame1.pack()
+
+addButton = Button(frame1, command=add_image, text = "Dodaj obrazek", font = ("Arial", 24), )
+addButton.pack()
+
+mainLabel= Label(window,
                   text="Moja pierwsza gra (od dawna)",
                   font = ("Arial", 28),
                   bd=10,
@@ -16,6 +30,5 @@ mainFrame = Label(window,
                   image=photo,
                   compound="top")
 
-mainFrame.pack()
-
+mainLabel.pack()
 window.mainloop()
