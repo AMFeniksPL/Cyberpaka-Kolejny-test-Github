@@ -3,7 +3,7 @@ from tkinter import filedialog as fd
 
 def add_image():
     filetypes = (
-        ('text files', '*.png'),
+        ('Obrazki PNG', '*.png'),
         ('All files', '*.*')
     )
     fd.askopenfilename(filetypes=filetypes)
